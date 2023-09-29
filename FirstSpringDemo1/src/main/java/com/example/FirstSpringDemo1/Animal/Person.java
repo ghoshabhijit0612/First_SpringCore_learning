@@ -18,6 +18,7 @@ Animal a;
     public Person (Animal a){
     this.a=a;
     System.out.println("Person contructor is calling ");
+    System.out.println("heLLO ");
 }
 //@Autowired
 public void setter(Animal a){
