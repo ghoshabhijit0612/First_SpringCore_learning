@@ -1,10 +1,9 @@
 package com.example.Spring21Project;
 
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import com.example.Spring21Project.Productions.Student;
 
-import java.util.Map;
+import java.util.List;
 
 @RestController
 public class Hello {
@@ -21,15 +20,22 @@ public class Hello {
         return "hwllo world i am hulo";
     }
 
+//    @PostMapping("/login")
+//    public  String getLogin (@RequestBody Map<String , Object> data){
+//        System.out.println(data);
+//        for (String key : data.keySet()) {
+//            Object value = data.get(key);
+//            System.out.println("Key: " + key + ", Value: " + value);
+//        }
+//
+//        return "x";
+//
+//    }
     @PostMapping("/login")
-    public  String getLogin (@RequestBody Map<String , Object> data){
-        System.out.println(data);
-        for (String key : data.keySet()) {
-            Object value = data.get(key);
-            System.out.println("Key: " + key + ", Value: " + value);
-        }
-
-        return "x";
-
+    public Student getStudent(@RequestBody List<Student>students){
+        System.out.println("Hello Stident");
+//        System.out.println(students.get(0).toString());
+        return students.get(0);
     }
+
 }
